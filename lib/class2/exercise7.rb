@@ -29,3 +29,8 @@
 #     Returns a new String of length Integer with `string` right justified.
 #
 #     'bird'.rjust(10)  #=> '      bird'
+
+puts 'Table of Contents'.center(50)
+puts 'Chapter 1:  Getting Started' + 'page  1'.rjust(23)
+puts 'Chapter 2:  Numbers' + 'page  9'.rjust(31)
+puts 'Chapter 3:  Letters' + 'page 13'.rjust(31)
