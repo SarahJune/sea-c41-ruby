@@ -1,0 +1,42 @@
+# exercise1 - hours in year
+puts 24 * 365
+
+# exercise2 - minutes in decade
+puts 60 * 24 * 365 * 10
+
+# exercise3 - age in years, 1,160,000,000 seconds
+puts ((((1160000000 / 60) / 60) / 24) / 365)
+
+# exercise4 - get/print full name
+puts "What's your first name?"
+f_name = gets.chomp
+puts "And your middle?"
+m_name = gets.chomp
+puts "What about your last?"
+l_name = gets.chomp
+puts "Wow, nice to meet you, " + f_name + " " + m_name + " "  + l_name + "!"
+
+# exercise5 - get/improve favorite number
+puts "What's your favorite number?"
+f_num = gets.chomp
+puts "Hm. Might I suggest " + (f_num.to_i + 1).to_s + " as an even bigger, better favorite number?"
+
+# exercise6 - angry boss
+puts "Whaddya want??"
+answer = gets.chomp
+puts "NO FRIGGIN WAY ARE YOU GETTING " + answer.upcase + "!!!"
+
+# exercise7 - table of contents
+
+center = 50
+margin = 30
+padding = 1
+
+ch_1 = "Getting Started"
+ch_2 = "Numbers"
+ch_3 = "Letters"
+puts "Table of Contents".center(center)
+puts " "
+puts "Chapter 1:" + " ".rjust(padding) + ch_1 + "Page".rjust(margin - ch_1.length) + " ".rjust(padding) + "1"
+puts "Chapter 2:" + " ".rjust(padding)  + ch_2 + "Page".rjust(margin - ch_2.length) + " ".rjust(padding) + "9"
+puts "Chapter 3:" + " ".rjust(padding)  + ch_3 + "Page".rjust(margin - ch_3.length) + " ".rjust(padding) + "13"
