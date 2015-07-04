@@ -8,3 +8,9 @@
 # divisible by 400 (e.g. 2000).
 #
 # TIP: I expect you to use a loop and a few modulo operations.
+
+years = 1904..2000
+
+years.each do |year|
+  puts year if year % 4 == 0 || (year % 400 == 0 && year % 100 != 0)
+end
