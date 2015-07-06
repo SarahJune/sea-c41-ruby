@@ -33,7 +33,35 @@
 
 # rubocop:disable MethodLength
 def modern_roman_numeral(num)
-  num # change me
+  romans = []
+  m = num / 1000
+  romans.push('M' * m)
+  num -= m * 1000
+  d = num / 500
+  romans.push('D' * d)
+  num -= d * 500
+  c = num / 100
+  romans.push('C' * c)
+  num -= c * 100
+  l = num / 50
+  romans.push('L' * l)
+  num -= l * 50
+  x = num / 10
+  romans.push('X' * x)
+  num -= x * 10
+  v = num / 5
+  romans.push('V' * v)
+  num -= v * 5
+  i = num / 1
+  romans.push('I' * i)
+  num -= i * 1
+  romans.map! { |x| x == 'DDDD' ? 'DM' : x }.flatten!
+  romans.map! { |x| x == 'CCCC' ? 'CD' : x }.flatten!
+  romans.map! { |x| x == 'LLLL' ? 'LC' : x }.flatten!
+  romans.map! { |x| x == 'XXXX' ? 'XL' : x }.flatten!
+  romans.map! { |x| x == 'VVVV' ? 'VX' : x }.flatten!
+  romans.map! { |x| x == 'IIII' ? 'IV' : x }.flatten!
+  romans.join('')
 end
 
 input = ARGV[0].to_i

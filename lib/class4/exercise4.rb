@@ -27,12 +27,35 @@
 # TIP #3: You only need to change the `old_school_roman_numeral` method.
 
 # rubocop:disable MethodLength
+
 def old_school_roman_numeral(num)
-  num # change me
+  romans = []
+  m = num / 1000
+  romans.push('M' * m)
+  num -= m * 1000
+  d = num / 500
+  romans.push('D' * d)
+  num -= d * 500
+  c = num / 100
+  romans.push('C' * c)
+  num -= c * 100
+  l = num / 50
+  romans.push('L' * l)
+  num -= l * 50
+  x = num / 10
+  romans.push('X' * x)
+  num -= x * 10
+  v = num / 5
+  romans.push('V' * v)
+  num -= v * 5
+  i = num / 1
+  romans.push('I' * i)
+  num -= i * 1
+  romans.join('')
 end
 
 input = ARGV[0].to_i
 
 abort 'Usage: exercise4.rb [1-1000]' unless input.between?(1, 1000)
 
-puts old_school_roman_numeral(input)
+ puts old_school_roman_numeral(input)
