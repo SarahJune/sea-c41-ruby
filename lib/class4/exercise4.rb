@@ -50,7 +50,6 @@ def old_school_roman_numeral(num)
   num -= v * 5
   i = num / 1
   romans.push('I' * i)
-  num -= i * 1
   romans.join('')
 end
 
@@ -58,4 +57,4 @@ input = ARGV[0].to_i
 
 abort 'Usage: exercise4.rb [1-1000]' unless input.between?(1, 1000)
 
- puts old_school_roman_numeral(input)
+puts old_school_roman_numeral(input)

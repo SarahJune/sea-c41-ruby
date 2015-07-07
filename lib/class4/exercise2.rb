@@ -26,9 +26,8 @@ hip_hop = [
   ['Regulate', 'Warren G & Nate Dogg', '1994'],
   ['I Got 5 On It', 'Luniz', '1995'],
   ['Ready Or Not', 'The Fugees', '1996']
-  ]
+]
 
 hip_hop.each do |position|
   puts position[0].ljust(20) + position[1].ljust(line - 24) + position[2]
 end
-

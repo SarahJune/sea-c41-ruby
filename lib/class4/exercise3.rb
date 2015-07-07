@@ -39,10 +39,7 @@ def ask(question)
     puts 'Try again'
     answer = gets.chomp
   end
-  if answer == 'y'
-    puts 'We can be friends!'
-  end
+  puts 'We can be friends!' if answer == 'y'
 end
 
 puts ask('Do you like eating tacos? (y or n)')
-

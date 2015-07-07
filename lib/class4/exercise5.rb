@@ -54,14 +54,14 @@ def modern_roman_numeral(num)
   num -= v * 5
   i = num / 1
   romans.push('I' * i)
-  num -= i * 1
-  romans.map! { |x| x == 'DDDD' ? 'DM' : x }.flatten!
-  romans.map! { |x| x == 'CCCC' ? 'CD' : x }.flatten!
-  romans.map! { |x| x == 'LLLL' ? 'LC' : x }.flatten!
-  romans.map! { |x| x == 'XXXX' ? 'XL' : x }.flatten!
-  romans.map! { |x| x == 'VVVV' ? 'VX' : x }.flatten!
-  romans.map! { |x| x == 'IIII' ? 'IV' : x }.flatten!
-  romans.join('')
+  romans.map! { |numeral| numeral == 'CCCC' ? 'CD' : numeral }
+  romans.map! { |numeral| numeral == 'XXXX' ? 'XL' : numeral }
+  romans.map! { |numeral| numeral == 'IIII' ? 'IV' : numeral }
+  romans_new = romans.join('')
+  romans_new.gsub!(/DCD/, 'CM')
+  romans_new.gsub!(/LXL/, 'XC')
+  romans_new.gsub!(/VIV/, 'IX')
+  romans_new
 end
 
 input = ARGV[0].to_i
