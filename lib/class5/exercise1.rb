@@ -12,7 +12,7 @@
 # In a series of 5 exercises, you'll learn how Ruby serializes data to and from
 # files.
 #
-# In this exercise, you'll play with YAML -- a human friendly data serialization
+# In this exercise, you'll play with YAML -- a human-friendly data serialization
 # format.
 #
 # Your first assignment is to write a program that displays an Array of
@@ -32,7 +32,13 @@
 require 'yaml'
 
 def records
-  ['change me']
+  [
+    'Incentivized methodologies',
+    'Seemless innovation',
+    'Corporate synergy',
+    'Scalable globalization',
+    'Monetized assets'
+  ]
 end
 
 puts records.to_yaml
