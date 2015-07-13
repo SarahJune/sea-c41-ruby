@@ -18,7 +18,7 @@
 # TIP: See your solution for Class 5 Exercise 2.
 
 def database
-  '/change/me'
+  File.absolute_path('lib/class6/database.yml')
 end
 
 puts database
