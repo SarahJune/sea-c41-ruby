@@ -32,18 +32,27 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.absolute_path("#{File.dirname(__FILE__)}/database.yml")
 end
 
 def load
-  { fix: 'me' }
+  File.open('database.yml', 'r') do |f|
+    f.read
+  end
 end
 
 def display(pairs)
-  pairs # fix me
+  pairs = YAML.load_file('database.yml')
+  pairs.each do |key, value|
+    if value == value.to_s
+      puts ":#{key} => \"#{value}\""
+    else
+      puts ":#{key} => #{value}"
+    end
+  end
 end
 
-person = load
+person = YAML.load load
 
 puts "Loaded #{person.size} key-value pairs in #{database}"
 

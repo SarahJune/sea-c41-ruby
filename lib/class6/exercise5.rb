@@ -22,15 +22,18 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  File.absolute_path("#{File.dirname(__FILE__)}/database.yml")
 end
 
 def load
-  { replace: 'me' }
+  File.open('database.yml', 'r') do |f|
+    f.read
+  end
 end
 
 def find(key)
-  key # fix me
+  new_hash = YAML.load_file('database.yml')
+  new_hash[key.to_sym]
 end
 
 input = ARGV[0]
