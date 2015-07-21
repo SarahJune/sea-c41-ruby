@@ -7,7 +7,7 @@
 #   OrangeTree#pick(amount = 1) #=> OrangeTree
 #
 #     Returns `nil` if `@fruit` is less than the `amount` to pick.
-#     Otherwise, returns a new OrangeTree object with it's fruit instance
+#     Otherwise, returns a new OrangeTree object with its fruit instance
 #     variable initialized to the difference between `@fruit` and `amount`.
 #     The default `amount` is 1.
 #
@@ -37,5 +37,22 @@
 
 # rubocop:disable TrivialAccessors
 class OrangeTree
-  # replace me
+  def initialize(fruit = 50)
+    @fruit = fruit
+  end
+
+  def fruit
+    @fruit
+  end
+
+  def pick(amount = 1)
+    if @fruit > 0 && amount <= @fruit
+      @fruit -= amount
+    end
+  end
+
+  def ==(other_tree)
+    self.fruit == other_tree.fruit
+  end
 end
+

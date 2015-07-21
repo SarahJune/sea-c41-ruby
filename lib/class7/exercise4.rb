@@ -6,7 +6,7 @@
 #
 #   OrangeTree#initialize(fruit = 50)
 #
-#     Sets it's `@fruit` instance variable to the `fruit` parameter, which
+#     Sets its `@fruit` instance variable to the `fruit` parameter, which
 #     defaults to 50.
 #
 #     orange_tree = OrangeTree.new
@@ -27,5 +27,21 @@
 
 # rubocop:disable TrivialAccessors
 class OrangeTree
-  # replace me
+  def initialize(fruit = 50)
+    @fruit = fruit
+  end
+
+  def fruit
+    @fruit
+  end
+
+  def pick(amount = 1)
+    if @fruit > 0 && amount <= @fruit
+      @fruit -= amount
+    end
+  end
+
+  def ==(other_tree)
+    self.fruit == other_tree.fruit
+  end
 end

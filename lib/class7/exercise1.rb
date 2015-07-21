@@ -45,31 +45,65 @@
 #
 #     1.plus_forty_two  #=> 43
 
-class Integer
+class Integer # Returns the number of hours converted to seconds.
   def hours_in_seconds
-    # replace me
+    self * 60 * 60
   end
 end
 
-class String
+class String # Returns `amount` spaces plus the String.
+             # The default `amount` is 2.
   def indent(amount = 2)
-    amount # replace me
+    result = ' ' * amount
+    result + self
   end
 end
 
-class Integer
+class Integer # Returns the roman numeral equavilent
+              # of the arabic number.
   # rubocop:disable MethodLength
   def to_roman
-    # replace me
+    num = self
+    romans = []
+    m = num / 1000
+    romans.push('M' * m)
+    num -= m * 1000
+    d = num / 500
+    romans.push('D' * d)
+    num -= d * 500
+    c = num / 100
+    romans.push('C' * c)
+    num -= c * 100
+    l = num / 50
+    romans.push('L' * l)
+    num -= l * 50
+    x = num / 10
+    romans.push('X' * x)
+    num -= x * 10
+    v = num / 5
+    romans.push('V' * v)
+    num -= v * 5
+    i = num / 1
+    romans.push('I' * i)
+    romans.map! { |numeral| numeral == 'CCCC' ? 'CD' : numeral }
+    romans.map! { |numeral| numeral == 'XXXX' ? 'XL' : numeral }
+    romans.map! { |numeral| numeral == 'IIII' ? 'IV' : numeral }
+    romans_new = romans.join('')
+    romans_new.gsub!(/DCD/, 'CM')
+    romans_new.gsub!(/LXL/, 'XC')
+    romans_new.gsub!(/VIV/, 'IX')
+    romans_new
   end
 end
 
-class Array
+class Array # Returns the second element of the Array.
   def second
-    # replace me
+    array = self
+    array[1]
   end
 
   def third
-    # replace me
+    array = self
+    array[2]
   end
 end
