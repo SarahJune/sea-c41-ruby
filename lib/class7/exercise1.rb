@@ -51,16 +51,14 @@ class Integer # Returns the number of hours converted to seconds.
   end
 end
 
-class String # Returns `amount` spaces plus the String.
-             # The default `amount` is 2.
+class String
   def indent(amount = 2)
     result = ' ' * amount
     result + self
   end
 end
 
-class Integer # Returns the roman numeral equavilent
-              # of the arabic number.
+class Integer
   # rubocop:disable MethodLength
   def to_roman
     num = self

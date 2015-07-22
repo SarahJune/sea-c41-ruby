@@ -3,7 +3,7 @@
 # 5 points
 #
 # Extend the previous program so the block also accepts a parameter and displays
-# it's value after executing the block.
+# its value after executing the block.
 #
 # For example:
 #
@@ -14,11 +14,13 @@
 #   block_param is lunch
 #
 # TIP: Don't over think this one. The simpler the better.
-
 def follow_the_execution(method_param, &block)
-  method_param && block # fix me
+  puts 'Executing the method'
+  puts "method_param is #{method_param}"
+  block.call 'lunch'
 end
 
 follow_the_execution('dinner') do |block_param|
-  block_param # fix me
+  puts "block_param is #{block_param}"
+  puts 'Executing the block'
 end
